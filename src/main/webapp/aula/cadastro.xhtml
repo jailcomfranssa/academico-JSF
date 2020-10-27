@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Cadastro de Aula</title>
+	<h:outputStylesheet library="css" name="estilo.css" target="head" />
+	<h:outputScript library="js" name="jsfprime.js" target="head" />
+	<style type="text/css">   
+            h1{
+            	float: left;
+				position: absolute;
+				margin-left: 168px;
+				margin-top: -71px;
+				font-size: 41px;
+				color: white;
+              
+            }
+            header{
+            	background-color: #849384;
+            }
+            #rodape{
+            	position: absolute;
+				bottom: 0;
+				width: 99%;
+				background-color: #849384;
+            }   
+        </style>
+</h:head>
+<h:body>
+
+	<header>
+			<dir>
+				<p:graphicImage library="img" name="acd12.gif" width="106" />
+			</dir>
+			<h1>Sistema Acadêmico</h1>
+		
+	</header>
+
+	<p:messages closable="true" errorStyle="color:red"
+		infoStyle="color:green" layout="table" />
+
+	<p:panel id="panel" header="Cadastrar Aula"
+		style="background-color:#ededed">
+
+		<p:focus context="panel" />
+		<h:form id="cad-usuario">
+			<div class="ui-g ui-fluid">
+
+
+
+				<div class="ui-g-3">
+					<p:outputLabel value="assunto:" for="assunto" />
+					<p:inputText value="#{cadAulaBean.aula.assunto}" id="assunto" 
+						required="true" requiredMessage="é obrigatório!"/>
+				</div>
+				
+				<div class="ui-g-3">
+					<p:outputLabel value="Data da Aula:" for="data" />
+					<p:calendar required="true" requiredMessage="Data da Aula"
+						 id="data" showTodayButton="true"  timeZone="GMT-3" value="#{cadAulaBean.aula.data}" showOn="button" />
+				</div>
+				
+				
+
+				<div class="ui-g-3">
+					<p:outputLabel value="Disciplina:" for="tipo" />
+					<p:selectOneMenu id="tipo" value="#{cadAulaBean.aula.disciplina}">
+						<f:converter converterId="genericDis"/> 
+							<f:selectItem noSelectionOption="true" 
+								itemLabel="--Selecione o Disciplina--" itemValue="#{null}"/>
+						
+							<f:selectItems value="#{cadAulaBean.disciplinaItems}"  var="c" itemLabel="#{c.nome}" itemValue="#{c}" />
+						
+					</p:selectOneMenu>
+				</div>
+				
+				<!-- qqqqqqqqqqqqq -->
+
+
+
+
+			</div>
+			<div class="ui-g ui-fluid">
+				<div class="ui-g-2">
+					<p:commandButton action="#{cadAulaBean.cadastrar()}" value="Salve"
+						ajax="false" />
+				</div>
+			</div>
+		</h:form>
+	</p:panel>
+	<div id="rodape">
+		<h3>Acadêmico</h3>
+	
+	</div>
+</h:body>
+</html>
