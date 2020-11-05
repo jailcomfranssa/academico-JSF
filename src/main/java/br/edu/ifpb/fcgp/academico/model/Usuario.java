@@ -31,7 +31,7 @@ public class Usuario implements Serializable{
 		
 		
 		@OneToMany(mappedBy="usuario")
-		private List<Coodernador> coordenador;
+		private List<Coordenador> coordenador;
 		
 		
 		
@@ -45,7 +45,7 @@ public class Usuario implements Serializable{
 		
 		public Usuario() {}
 
-		public Usuario(int id, String nome, String email, String matricula, String login, String senha, String tipo, List<Coodernador> coordenador, List<UsuarioTurma>usuarioTurma, List<Nota> nota ) {
+		public Usuario(int id, String nome, String email, String matricula, String login, String senha, String tipo, List<Coordenador> coordenador, List<UsuarioTurma>usuarioTurma, List<Nota> nota ) {
 			super();
 			this.id = id;
 			this.nome = nome;
@@ -119,11 +119,11 @@ public class Usuario implements Serializable{
 		
 		
 
-		public List<Coodernador> getCoordenador() {
+		public List<Coordenador> getCoordenador() {
 			return coordenador;
 		}
 
-		public void setCoordenador(List<Coodernador> coordenador) {
+		public void setCoordenador(List<Coordenador> coordenador) {
 			this.coordenador = coordenador;
 		}
 		

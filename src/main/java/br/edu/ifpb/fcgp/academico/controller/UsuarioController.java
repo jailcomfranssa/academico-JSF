@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import br.edu.ifpb.fcgp.academico.dao.LoginDAO;
 import br.edu.ifpb.fcgp.academico.dao.Transactional;
 import br.edu.ifpb.fcgp.academico.dao.UsuarioDAO;
-import br.edu.ifpb.fcgp.academico.model.Coodernador;
+import br.edu.ifpb.fcgp.academico.model.Coordenador;
 import br.edu.ifpb.fcgp.academico.model.Disciplina;
 import br.edu.ifpb.fcgp.academico.model.Nota;
 import br.edu.ifpb.fcgp.academico.model.Usuario;
@@ -46,7 +46,7 @@ public class UsuarioController implements Serializable{
 	  
 	 return loginDao.getLogin(login,senha); }
 	 
-	 public Coodernador CoodAtivo(Integer id) {
+	 public Coordenador CoodAtivo(Integer id) {
 		 return loginDao.getCoodAtivo(id);
 		 
 	 }

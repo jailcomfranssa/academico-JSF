@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import br.edu.ifpb.fcgp.academico.model.Coodernador;
+import br.edu.ifpb.fcgp.academico.model.Coordenador;
 import br.edu.ifpb.fcgp.academico.model.Disciplina;
 import br.edu.ifpb.fcgp.academico.model.Nota;
 import br.edu.ifpb.fcgp.academico.model.Usuario;
@@ -37,12 +37,12 @@ public class LoginDAO extends GenericDAO <Usuario, Integer>{
 	    
 	}
 	
-	public Coodernador getCoodAtivo(Integer id) {
+	public Coordenador getCoodAtivo(Integer id) {
 		try {
-		    String query = "SELECT u FROM Coodernador u WHERE u.usuario.id =?1 ";
-		    TypedQuery<Coodernador> typedQuery =entityManager.createQuery(query, Coodernador.class);
+		    String query = "SELECT u FROM Coordenador u WHERE u.usuario.id =?1 ";
+		    TypedQuery<Coordenador> typedQuery =entityManager.createQuery(query, Coordenador.class);
 		    typedQuery.setParameter(1, id);
-		    Coodernador coode = typedQuery.getSingleResult();
+		    Coordenador coode = typedQuery.getSingleResult();
 		    return coode;
 		    
 		} catch (Exception e) {

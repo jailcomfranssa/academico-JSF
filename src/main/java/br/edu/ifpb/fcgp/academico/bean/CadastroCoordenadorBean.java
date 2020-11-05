@@ -8,37 +8,37 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.fcgp.academico.controller.CoodernadorController;
+import br.edu.ifpb.fcgp.academico.controller.CoordenadorController;
 import br.edu.ifpb.fcgp.academico.controller.UsuarioController;
 
-import br.edu.ifpb.fcgp.academico.model.Coodernador;
+import br.edu.ifpb.fcgp.academico.model.Coordenador;
 import br.edu.ifpb.fcgp.academico.model.Usuario;
 
 @Named(value = "cadCoodBean")
 @ViewScoped
-public class CadastroCoodernadorBean  extends GenericAcademicoBean implements Serializable{
+public class CadastroCoordenadorBean  extends GenericAcademicoBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	private Coodernador coodernador;
+	private Coordenador coordenador;
 	
 	@Inject
-	private CoodernadorController codController;
+	private CoordenadorController codController;
 	
 	@Inject
 	private UsuarioController userController;
 	
 	@PostConstruct
 	public void init() {
-		Coodernador codFlash = (Coodernador) this.getFlash("coodernador");
+		Coordenador codFlash = (Coordenador) this.getFlash("coodernador");
 		if (codFlash != null) {
-			this.coodernador = codFlash;
+			this.coordenador = codFlash;
 		}
 	}
 	public String cadastrar() {
 		// Usa o dao para inserir o aluno
-		Integer id = coodernador.getId();
-		codController.saveOrUpdate(coodernador);
+		Integer id = coordenador.getId();
+		codController.saveOrUpdate(coordenador);
 		
 		
 		
@@ -50,7 +50,7 @@ public class CadastroCoodernadorBean  extends GenericAcademicoBean implements Se
 		}
 		
 		// Limpa objeto do formulário
-		coodernador = new Coodernador();
+		coordenador = new Coordenador();
 		
 		// Retorna para mesma página
 		return "consulta?faces-redirect=true";
@@ -60,11 +60,11 @@ public class CadastroCoodernadorBean  extends GenericAcademicoBean implements Se
 		List<Usuario> user = userController.findProf();
 		return user;
 	}
-	public Coodernador getCoodernador() {
-		return coodernador;
+	public Coordenador getCoodernador() {
+		return coordenador;
 	}
-	public void setCoodernador(Coodernador coodernador) {
-		this.coodernador = coodernador;
+	public void setCoodernador(Coordenador coordenador) {
+		this.coordenador = coordenador;
 	}
 	
 	

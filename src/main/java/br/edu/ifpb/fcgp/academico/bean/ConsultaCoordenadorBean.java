@@ -10,58 +10,58 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.fcgp.academico.controller.CoodernadorController;
-import br.edu.ifpb.fcgp.academico.model.Coodernador;
+import br.edu.ifpb.fcgp.academico.controller.CoordenadorController;
+import br.edu.ifpb.fcgp.academico.model.Coordenador;
 
 @Named(value = "consCooderBean")
 @ViewScoped
-public class ConsultaCoodernadorBean extends GenericAcademicoBean implements Serializable {
+public class ConsultaCoordenadorBean extends GenericAcademicoBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	private List<Coodernador> coodernador;
+	private List<Coordenador> coordenador;
 	private Map<Integer, Boolean> checked = new HashMap<Integer, Boolean>();
 	private Integer id;
 	
 	@Inject 
-	private CoodernadorController controller;
+	private CoordenadorController controller;
 	
 	public void init() {
 		if (id == null) {
-			coodernador = controller.findAll();
+			coordenador = controller.findAll();
 		}else {
-			coodernador = Collections.singletonList(controller.find(id));
+			coordenador = Collections.singletonList(controller.find(id));
 		}
 	}
-	public String excluir(Coodernador coodernador) {
-		controller.excluir(coodernador);
+	public String excluir(Coordenador coordenador) {
+		controller.excluir(coordenador);
 		this.addInfoMessage("Coodernador excluído com sucesso!");
 		this.init();
 		return null;
 		
 	}
-	public String editar(Coodernador coodernador) {
-		this.putFlash("coodernador",coodernador);
+	public String editar(Coordenador coordenador) {
+		this.putFlash("coodernador",coordenador);
 		return "cadastroCood?faces-redirect=true";
 	}
 	public String excluirSelecionados() {
-		Coodernador cod = null;
+		Coordenador cod = null;
 		for (Integer id : checked.keySet()) {
 			if (checked.get(id)) {
 				cod = controller.find(id);
 				controller.excluir(cod);
 			}
 		}
-		coodernador = controller.findAll();
+		coordenador = controller.findAll();
 		checked.clear();
 		this.addInfoMessage("Coodernador selecionados excluídos com sucesso!");
 		return null;
 	}
-	public List<Coodernador> getCoodernador() {
-		return coodernador;
+	public List<Coordenador> getCoodernador() {
+		return coordenador;
 	}
-	public void setCoodernador(List<Coodernador> coodernador) {
-		this.coodernador = coodernador;
+	public void setCoodernador(List<Coordenador> coordenador) {
+		this.coordenador = coordenador;
 	}
 	public Map<Integer, Boolean> getChecked() {
 		return checked;

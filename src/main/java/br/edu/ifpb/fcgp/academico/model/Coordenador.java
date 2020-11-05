@@ -12,8 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_coodernador")
-public class Coodernador  implements Serializable {
+@Table(name="tb_coordenador")
+public class Coordenador  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -28,11 +28,11 @@ public class Coodernador  implements Serializable {
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 	
-	public Coodernador() {
+	public Coordenador() {
 		
 	}
 
-	public Coodernador(Integer id, boolean ativo, Usuario usuario) {
+	public Coordenador(Integer id, boolean ativo, Usuario usuario) {
 		super();
 		this.id = id;
 		this.ativo = ativo;
@@ -79,7 +79,7 @@ public class Coodernador  implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Coodernador other = (Coodernador) obj;
+		Coordenador other = (Coordenador) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -90,7 +90,7 @@ public class Coodernador  implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Coodernador [id=" + id + ", ativo=" + ativo + ", usuario=" + usuario + "]";
+		return "Coordenador [id=" + id + ", ativo=" + ativo + ", usuario=" + usuario + "]";
 	}
 	
 	

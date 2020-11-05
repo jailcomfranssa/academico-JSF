@@ -11,7 +11,7 @@ import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 
 import br.edu.ifpb.fcgp.academico.controller.UsuarioController;
-import br.edu.ifpb.fcgp.academico.model.Coodernador;
+import br.edu.ifpb.fcgp.academico.model.Coordenador;
 import br.edu.ifpb.fcgp.academico.model.Disciplina;
 import br.edu.ifpb.fcgp.academico.model.Nota;
 import br.edu.ifpb.fcgp.academico.model.Usuario;
@@ -21,32 +21,16 @@ import br.edu.ifpb.fcgp.academico.model.Usuario;
 public class LoginBean extends GenericAcademicoBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	
-	
-	
-	
-	
-	
 	private Usuario usuarioLogado;
-	private Coodernador cod;
+	private Coordenador cod;
 	private List<Nota> nota;
 	private List<Disciplina> diciplina;
-	
-	
-
 	
     private String login;
     private String senha;
     
-    
-	
 	@Inject
 	private UsuarioController controller;
-	
-	
-	
-
-	
 	
 	public String Login() {
 		
@@ -63,8 +47,6 @@ public class LoginBean extends GenericAcademicoBean implements Serializable{
 		}
 		
 	   
-		
-		
 		if(usuarioLogado == null  ) {
 			
 			FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!",
@@ -84,7 +66,7 @@ public class LoginBean extends GenericAcademicoBean implements Serializable{
 				 }
 				 try {
 					 if(cod.isAtivo() == true) {
-						 return "/coodernador/coodernadorlogado?faces-redirect=true"; 
+						 return "/coordenador/coordenadorlogado?faces-redirect=true"; 
 					 }
 					
 				} catch (Exception e) {
@@ -129,11 +111,11 @@ public class LoginBean extends GenericAcademicoBean implements Serializable{
 		this.usuarioLogado = usuarioLogado;
 	}
 
-	public Coodernador getCod() {
+	public Coordenador getCod() {
 		return cod;
 	}
 
-	public void setCod(Coodernador cod) {
+	public void setCod(Coordenador cod) {
 		this.cod = cod;
 	}
 

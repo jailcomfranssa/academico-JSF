@@ -19,7 +19,7 @@
 		<class>br.edu.ifpb.fcgp.academico.model.Disciplina</class>
 		<class>br.edu.ifpb.fcgp.academico.model.Turma</class>
 		<class>br.edu.ifpb.fcgp.academico.model.Usuario</class>
-		<class>br.edu.ifpb.fcgp.academico.model.Coodernador</class>
+		<class>br.edu.ifpb.fcgp.academico.model.Coordenador</class>
 		<class>br.edu.ifpb.fcgp.academico.model.UsuarioTurma</class>
 		<class>br.edu.ifpb.fcgp.academico.model.Aula</class>
 		<class>br.edu.ifpb.fcgp.academico.model.Nota</class>
