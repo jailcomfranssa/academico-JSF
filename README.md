@@ -6,7 +6,7 @@ Aluno: Rafael da Silva Marinho mat: 20142370368
 ==============================================
 LINKs:=======================================
 
-coodernador:
+coordenador:
 
 http://localhost:8080/academico/coodernador/cadastro.xhtml
 
