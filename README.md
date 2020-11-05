@@ -64,7 +64,7 @@ INSERT INTO `academico`.`tb_usuario` (`email`, `login`, `matricula`, `nome`, `se
 
 INSERT INTO `academico`.`tb_usuario` (`email`, `login`, `matricula`, `nome`, `senha`, `tipo`) VALUES ('professor', 'professor', '233', 'professor', '123', 'PROFESSOR');
 
-INSERT INTO `academico`.`tb_usuario` (`email`, `login`, `matricula`, `nome`, `senha`, `tipo`) VALUES ('cood', 'cood', '888', 'coodernador', '123', 'PROFESSOR');
+INSERT INTO `academico`.`tb_usuario` (`email`, `login`, `matricula`, `nome`, `senha`, `tipo`) VALUES ('cood', 'cood', '888', 'coordenador', '123', 'PROFESSOR');
 
 
 INSERT INTO `academico`.`tb_coodernador` (`ativo`, `usuario_id`) VALUES (1, 3);
